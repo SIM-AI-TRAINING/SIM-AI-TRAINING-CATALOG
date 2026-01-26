@@ -924,6 +924,20 @@
             }
         });
     </script>
+    <script>
+        fetch("/collect", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                client_id: crypto.randomUUID(),
+                events: [
+                    { name: "page_view" }
+                ]
+            })
+        })
+    </script>
 </body>
 
 </html>
